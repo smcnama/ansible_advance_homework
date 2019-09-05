@@ -9,7 +9,7 @@ osp_servers:
     flavor: m2.small
     security_group: frontend
     meta:
-      - { group: frontends, deployment_name: QA}
+      - { group: frontend, deployment_name: QA}
   app1:
     name: app1
     state: present
