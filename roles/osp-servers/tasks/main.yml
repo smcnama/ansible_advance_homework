@@ -1,7 +1,7 @@
 ---
 
 # tasks file for osp.servers
-- me: Create new server instances and attach them to a network and pass metadata to the instance
+- name: Create new server instances and attach them to a network and pass metadata to the instance
   os_server:
     cloud: ospcloud
     name: "{{ item.0.name }}"
@@ -36,6 +36,12 @@
     timeout: 180
   register: instancefloatingip
   with_dict: "{{osp_servers}}"
+
+- name: Fetch Instance Info
+  os_server_facts:
+    cloud: ospcloud
+    region_name: RegionOne
+  register: r_os_servers
 
 - name: Wait for server to be available
   wait_for:
