@@ -1,7 +1,7 @@
 - hosts: tag_AnsibleGroup_frontends
   gather_facts: false
   tasks:
-  - name: Use Uri module for wrting smoke test.
+  - name: Use Uri module for writing smoke test.
     uri:
       url: "http://{{ inventory_hostname }}"
       return_content: true
