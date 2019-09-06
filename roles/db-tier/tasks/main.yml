@@ -8,7 +8,7 @@
   service:
     name: "{{ postgresql_daemon }}"
     enabled: yes
-- name: Initilize postgres
+- name: Initialize postgres
   shell: postgresql-setup initdb
   args:
     creates: /var/lib/pgsql/data/PG_VERSION
