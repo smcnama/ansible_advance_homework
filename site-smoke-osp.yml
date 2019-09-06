@@ -3,12 +3,11 @@
   tasks:
   - name: OpenStack servers
     os_server_facts:
-     cloud: ospcloud
-     server: 'frontend'
+      cloud: ospcloud
+      server: 'frontend'
     register: openstack_info
     tags:
       - osp.smoke
-
   - name: Curl website
     uri:
       url: "http://{{ item.public_v4 }}"
