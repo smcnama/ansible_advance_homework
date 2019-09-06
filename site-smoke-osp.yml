@@ -14,7 +14,7 @@
       url: "http://{{ item.public_v4 }}"
       return_content: yes
     register: webpage
-    with_items: {{ "openstack_info.ansible_facts.openstack_servers" }}
+    with_items: "{{ openstack_info.ansible_facts.openstack_servers }}"
 
   - name: Fail if 'Ansible has done its job' is not in the page content
     fail:
